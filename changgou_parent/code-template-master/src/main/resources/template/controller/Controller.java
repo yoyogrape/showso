@@ -7,7 +7,6 @@ import entity.StatusCode;
 <#if swagger==true>import io.swagger.annotations.*;</#if>
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import java.util.List;
 
 /****
  * @Author:songjn1

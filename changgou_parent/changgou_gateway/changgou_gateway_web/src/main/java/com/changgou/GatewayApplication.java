@@ -21,7 +21,7 @@ public class GatewayApplication {
         return new KeyResolver() {
             @Override
             public Mono<String> resolve(ServerWebExchange exchange) {
-                System.out.println("===限制用户请求的IP：" + exchange.getRequest().getRemoteAddress().getHostName());
+                System.out.println("...GatewayApplication...ipKeyResolver()...限制用户请求的IP：" + exchange.getRequest().getRemoteAddress().getHostName());
                 return Mono.just(exchange.getRequest().getRemoteAddress().getHostName());
             }
         };

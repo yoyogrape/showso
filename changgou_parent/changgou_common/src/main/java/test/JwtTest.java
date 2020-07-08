@@ -1,6 +1,5 @@
 package test;
 
-import com.sun.scenario.effect.impl.prism.ps.PPStoPSWDisplacementMapPeer;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;

@@ -3,7 +3,7 @@
 //import com.changgou.goods.pojo.Brand;
 //import com.github.pagehelper.PageInfo;
 //
-//import java.util.List;
+//import java.com.changgou.common.util.List;
 //
 //public interface BrandService {
 //    List<Brand> findAll();
