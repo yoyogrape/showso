@@ -7,6 +7,7 @@ import com.github.pagehelper.PageInfo;
 import entity.Result;
 import entity.StatusCode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.web.bind.annotation.*;
 import util.JwtUtil;
@@ -153,7 +154,7 @@ public class UserController {
      * @param id
      * @return
      */
-    @GetMapping("/{id}")
+    @GetMapping({"/{id}","/load/{id}"})
     public Result<User> findById(@PathVariable String id) {
         //调用UserService实现根据主键查询User
         User user = userService.findById(id);
@@ -164,10 +165,11 @@ public class UserController {
      * 查询User全部数据
      * @return
      */
+    @PreAuthorize("hasAnyRole('user')")
     @GetMapping
     public Result<List<User>> findAll() {
         //调用UserService实现查询所有User
         List<User> list = userService.findAll();
-        return new Result<List<User>>(true, StatusCode.OK, "查询成功", list);
+        return new Result<List<User>>(true, StatusCode.OK, "查询成功1", list);
     }
 }

@@ -42,8 +42,6 @@
 
 ![1558176649652](images\1558176649652.png)
 
-
-
 单点登录的特点是： 
 
 ```
@@ -65,7 +63,7 @@
 #### 2.2.1 Oauth2认证流程
 
 ​	第三方认证技术方案最主要是解决认证协议的通用标准 问题，因为要实现跨系统认证，各系统之间要遵循一定的接口协议。
-​	OAUTH协议为用户资源的授权提供了一个安全的、开放而又简易的标准。同时，任何第三方都可以使用OAUTH认
+	OAUTH协议为用户资源的授权提供了一个安全的、开放而又简易的标准。同时，任何第三方都可以使用OAUTH认
 证服务，任何服务提供商都可以实现自身的OAUTH认证服务，因而OAUTH是开放的。业界提供了OAUTH的多种实现如PHP、JavaScript，Java，Ruby等各种语言开发包，大大节约了程序员的时间，因而OAUTH是简易的。互联网很多服务如Open API，很多大公司如Google，Yahoo，Microsoft等都提供了OAUTH认证服务，这些都足以说明OAUTH标准逐渐成为开放资源授权的标准。
 Oauth协议目前发展到2.0版本，1.0版本过于复杂，2.0版本已得到广泛应用。
 参考：https://baike.baidu.com/item/oAuth/7153134?fr=aladdin
@@ -74,7 +72,7 @@ Oauth协议：https://tools.ietf.org/html/rfc6749
 
 ![1564717348350](images/1564717348350.png)
 
-
+![](images\Snipaste_2020-07-11_12-05-12.png)
 
 1.客户端请求第三方授权
 
@@ -251,7 +249,22 @@ secret：签名所使用的密钥。
 
 ### 3.2 生成私钥公钥
 
-JWT令牌生成采用非对称加密算法 
+**加密**
+
+- RSA：非对称加密算法，公钥加密，私钥解密
+
+- MD5摘要加密
+
+- AES,DESC对称加密
+
+  ```properties
+  公钥：加密
+  私钥：解密
+  ```
+
+  
+
+  JWT令牌生成采用非对称加密算法 
 
 1、生成密钥证书 下边命令生成密钥证书，采用RSA 算法每个证书包含公钥和私钥 
 
@@ -486,7 +499,7 @@ Oauth2有以下授权模式：
 
 ```properties
 Get请求：
-http://localhost:9200/oauth/authorize?client_id=changgou&response_type=code&scop=app&redirect_uri=http://localhost
+http://localhost:9001/oauth/authorize?client_id=changgou&response_type=code&scop=app&redirect_uri=http://localhost
 ```
 
 参数列表如下： 
